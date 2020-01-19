@@ -9,8 +9,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val bing : ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        bing.viewmodel = ViewModelBean("王东东", "12")
+        setContentView(R.layout.activity_main)
     }
 }

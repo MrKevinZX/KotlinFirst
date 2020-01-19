@@ -7,21 +7,26 @@
             name="head"
             type="com.bmsr.tree.HeadInfo" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginLeft="28dp"
-            android:layout_marginTop="138dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:contentDescription="@string/a11y_plant_item_image"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/hqdefault"
+            app:imageUrl="@{head.imageUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_user_name"
@@ -33,15 +38,16 @@
             tools:text="不差我一个" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tv_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="68dp"
-            android:text="放大放大放大"
+            android:text="@{head.state}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/tv_user_name" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
+            tools:text="@string/where" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"

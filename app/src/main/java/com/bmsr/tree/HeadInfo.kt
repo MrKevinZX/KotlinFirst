@@ -1,3 +1,9 @@
 package com.bmsr.tree
 
-data class HeadInfo(val headIcon : String, val userName : String , val state : String)
+import android.widget.ImageView
+import androidx.databinding.BaseObservable
+import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+
+data class HeadInfo(val imageUrl : String = "", val userName : String, val state : String): BaseObservable()

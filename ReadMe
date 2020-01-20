@@ -20,6 +20,12 @@ Default interface methods are only supported starting with Android N (--min-api 
 问题原因 1. 可能一个xml类被多个activity持有 比如之前删除
 最终解决方案： 菜单 -> File -> Invalidate Caches / Restart…
 
+4. 解决构造函数的问题
+问题描述： 继承androidviewmodel 类的时候， 变量application 不能直接引用 添加val 也是不可以引用
+原因 不能使用和父类一样名字的变量名称，需要跳转子类的变量命名
+
+5.
+
 
 
 

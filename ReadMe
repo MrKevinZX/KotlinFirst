@@ -1,2 +1,21 @@
 该版本尝试说明：
 希望进一步了解android jetpack
+说明：
+解决的问题有 kotlin lambda 表达式的使用
+
+1.带参数的使用
+kotlin
+viewmodel.number.observe(this, Observer<String> name->
+
+)
+
+
+2. 解决项目编译不通过的问题：
+Default interface methods are only supported starting with Android N (--min-api 24): void androidx.lifecycle.DefaultLifecycleObserver.onCreate(androidx.lifecycle.LifecycleOwner)
+
+修复方案： build.gradle 升级最小的sdk 版本号
+
+
+
+
+

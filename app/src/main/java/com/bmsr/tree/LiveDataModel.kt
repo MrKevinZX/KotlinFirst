@@ -13,8 +13,9 @@ class LiveDataModel : ViewModel() {
     fun getLikeNumber() {
 //        likeNumber.value = "Wangdongdong"
     }
-
-    fun setLikeNume(name : String) {
-        likeNumber.value = name
+    var num = 10
+    fun setLikeNume() {
+        num ++
+        likeNumber.value = num.toString()
     }
 }

@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="data"
+            type="com.bmsr.tree.LiveDataModel" />
 
     </data>
 
@@ -18,7 +21,7 @@
             android:layout_marginTop="94dp"
             android:layout_marginBottom="61dp"
             android:layout_weight="1"
-            android:text="@string/desc_title"
+            android:text="@{data.likeNumber}"
             app:layout_constraintBottom_toTopOf="@+id/imageView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +48,7 @@
             android:layout_marginRight="51dp"
             android:layout_marginBottom="391dp"
             android:text="Button"
+            android:onClick="@{()->data.setLikeNume()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView2" />

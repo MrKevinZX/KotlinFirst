@@ -16,6 +16,11 @@ Default interface methods are only supported starting with Android N (--min-api 
 修复方案： build.gradle 升级最小的sdk 版本号
 
 
+3. 解决databinding 注解类无法自动生成
+问题原因 1. 可能一个xml类被多个activity持有 比如之前删除
+最终解决方案： 菜单 -> File -> Invalidate Caches / Restart…
+
+
 
 
 

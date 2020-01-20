@@ -6,7 +6,7 @@
     <data>
         <variable
             name="data"
-            type="com.bmsr.tree.LiveDataModel" />
+            type="com.bmsr.tree.SimpleDataModel" />
 
     </data>
 
@@ -21,7 +21,7 @@
             android:layout_marginTop="94dp"
             android:layout_marginBottom="61dp"
             android:layout_weight="1"
-            android:text="@{data.likeNumber}"
+            android:text="@{data.getNumber().toString()}"
             app:layout_constraintBottom_toTopOf="@+id/imageView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,12 +45,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="51dp"
-            android:layout_marginRight="51dp"
             android:layout_marginBottom="391dp"
+            android:onClick="@{()->data.add(1)}"
             android:text="Button"
-            android:onClick="@{()->data.setLikeNume()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="78dp"
+            android:layout_marginTop="29dp"
+            android:text="Button"
+            android:onClick="@{()->data.add(-1)}"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
             app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
 

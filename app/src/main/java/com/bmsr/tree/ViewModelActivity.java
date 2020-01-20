@@ -1,5 +1,7 @@
 package com.bmsr.tree;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -7,8 +9,11 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
+
+import com.bmsr.tree.databinding.ActivitiyModelBinding;
 
 public class ViewModelActivity extends AppCompatActivity implements View.OnClickListener {
     MyViewModel myViewModel;
@@ -17,14 +22,12 @@ public class ViewModelActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activitiy_model);
-        mTitleView = findViewById(R.id.textView);
-        mBtn1 = findViewById(R.id.button);
-        mBtn2 = findViewById(R.id.button2);
-        mBtn1.setOnClickListener(this);
-        mBtn2.setOnClickListener(this);
+        ActivitiyModelBinding bing = DataBindingUtil.setContentView(this, R.layout.activitiy_model);
         myViewModel = ViewModelProviders.of(this).get(MyViewModel.class);
-        mTitleView.setText(String.valueOf(myViewModel.number));
+        bing.button.setOnClickListener(this);
+        bing.textView.setText(String.valueOf(myViewModel.number));
+        SharedPreferences preferences = getApplication().getSharedPreferences("test", Context.MODE_PRIVATE);
+        preferences.edit().putInt("test", 1).apply();
     }
 
     @Override

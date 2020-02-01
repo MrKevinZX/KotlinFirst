@@ -21,7 +21,7 @@ class NavFragment : Fragment() {
     ): View? {
         val binding = DataBindingUtil.inflate<FragmentNarBinding>(inflater, R.layout.fragment_nar, container, false)
         recyclerView = binding.recyclerView
-        recyclerView.adapter = TestNavAdapter(datas)
+//        recyclerView.adapter = TestNavAdapter(datas)
         return binding.root
     }
 }

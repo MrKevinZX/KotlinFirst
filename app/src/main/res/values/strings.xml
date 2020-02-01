@@ -8,4 +8,5 @@
     <string name="btn1">Button1</string>
     <string name="button2">Button2</string>
     <string name="key_name">user_name</string>
+    <string name="desc_file">文件信息1</string>
 </resources>

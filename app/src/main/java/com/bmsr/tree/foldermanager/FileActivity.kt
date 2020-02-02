@@ -5,10 +5,13 @@ import android.os.PersistableBundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bmsr.tree.R
 import com.bmsr.tree.databinding.ActivityFileBinding
+import com.bmsr.tree.foldermanager.helper.OnStartDragListener
+import com.bmsr.tree.foldermanager.helper.SimpleItemTouchHelperCallback
 import javax.security.auth.login.LoginException
 
 /**
@@ -16,8 +19,13 @@ import javax.security.auth.login.LoginException
  * @CreateDate : 2020-02-01 15:04
  * @Description :
  */
-class FileActivity : AppCompatActivity() {
-
+class FileActivity : AppCompatActivity(), OnStartDragListener {
+    override fun onStartDrag(viewHolder: RecyclerView.ViewHolder?) {
+        if (viewHolder != null) {
+            itemTouchHelper.startDrag(viewHolder)
+        }
+    }
+    lateinit var itemTouchHelper: ItemTouchHelper
     lateinit var recyclerView: RecyclerView
     lateinit var mDatas :MutableList<FileInfo>
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,18 +34,22 @@ class FileActivity : AppCompatActivity() {
         val binding = DataBindingUtil.setContentView<ActivityFileBinding>(this, R.layout.activity_file)
         recyclerView = binding.recyclerView
         initDatas()
-        recyclerView.adapter = FileAdapter(mDatas)
+        val adapter = FileAdapter(mDatas, this)
+        recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
+        val callback = SimpleItemTouchHelperCallback(adapter)
+        itemTouchHelper = ItemTouchHelper(callback);
+        itemTouchHelper.attachToRecyclerView(recyclerView)
     }
 
     private fun initDatas() {
         mDatas = ArrayList()
         for (i in 0..99){
             var fileInfo : FileInfo
-            if (i%10 == 0) {
-                fileInfo = FileInfo("文件夹-" + (i / 10), true)
+            if (i%6== 0) {
+                fileInfo = FileInfo("文件夹-" + (i / 6), true, true)
             } else {
-                fileInfo = FileInfo("文件信息-" + i, false)
+                fileInfo = FileInfo("文件信息-" + i, false, false)
             }
             Log.i("wdd", "信息 = "+ i)
             mDatas.add(fileInfo)

@@ -7,7 +7,6 @@
         <variable
             name="data"
             type="com.bmsr.tree.SimpleDataModel" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

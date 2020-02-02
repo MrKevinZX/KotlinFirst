@@ -6,4 +6,4 @@ package com.bmsr.tree.foldermanager
  * @Description :
  */
 
-data class FileInfo(val fileName: String, val isFolder: Boolean)
+data class FileInfo(val fileName: String, val isFolder: Boolean, val visibility: Boolean)

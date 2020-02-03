@@ -1,6 +1,7 @@
 package com.bmsr.tree.foldermanager
 
 import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
@@ -29,6 +30,7 @@ class FileAdapter(var fileList:MutableList<FileInfo>, val startDragListener: OnS
     override fun onItemDismiss(position: Int) {
         fileList.removeAt(position)
         notifyItemRemoved(position)
+        Log.i("wdd","onItemDismiss position = " + position)
     }
 
     override fun onItemMove(fromPosition: Int, toPosition: Int): Boolean {

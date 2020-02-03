@@ -44,15 +44,19 @@ class FileActivity : AppCompatActivity(), OnStartDragListener {
 
     private fun initDatas() {
         mDatas = ArrayList()
+        var isFirst = true
         for (i in 0..99){
             var fileInfo : FileInfo
-            if (i%6== 0) {
-                fileInfo = FileInfo("文件夹-" + (i / 6), true, true)
-            } else {
+            if (i%6 != 0 && isFirst) {
                 fileInfo = FileInfo("文件信息-" + i, false, false)
+                mDatas.add(fileInfo)
+            } else if (i%6 == 0){
+                isFirst = false
+                fileInfo = FileInfo("文件夹-" + (i / 6), true, true)
+                mDatas.add(fileInfo)
             }
             Log.i("wdd", "信息 = "+ i)
-            mDatas.add(fileInfo)
+
         }
     }
 

@@ -20,6 +20,9 @@
 
         </activity>
         <activity android:name=".foldermanager.FileActivity" >
+
+        </activity>
+        <activity android:name=".animation.AnimationActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

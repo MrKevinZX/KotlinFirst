@@ -17,6 +17,7 @@
             android:layout_gravity="center"
             android:gravity="center"/>
         <ScrollView
+            android:id="@+id/scroll_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <RelativeLayout
@@ -24,6 +25,7 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:background="#ff22cc"
                     android:id="@+id/period_container"
                     android:orientation="vertical"
                     android:layout_below="@+id/real_money"
@@ -40,13 +42,16 @@
                         android:gravity="center"
                         android:text="免息期"/>
                     <TextView
+                        android:id="@+id/free"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:gravity="center"
+                        android:visibility="gone"
                         android:text="免洗"/>
                 </LinearLayout>
                 <RelativeLayout
                     android:id="@+id/paymethod_container"
+                    android:background="#eeff00"
                     android:layout_below="@+id/period_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -64,6 +69,7 @@
                         android:layout_height="wrap_content"/>
                 </RelativeLayout>
                 <TextView
+                    android:background="#00ffcc"
                     android:id="@+id/real_money"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"

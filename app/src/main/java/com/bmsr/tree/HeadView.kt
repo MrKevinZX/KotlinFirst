@@ -16,7 +16,7 @@ class HeadView @JvmOverloads constructor(
     init {
         var rootView = LayoutInflater.from(getContext()).inflate(R.layout.layout_head, this, true)
 
-//        val binding = DataBindingUtil.inflate<HeadViewBinding>(R.layout.layout_head, this, true)
+//        val binding = DataBindingUtil.inflate<HeadViewBinding>(R.activity_jd.layout_head, this, true)
 //        var binding = DataBindingUtil.bind<HeadViewDataBinding>(rootView)
         val  inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)
         var binding= DataBindingUtil.inflate<HeadViewDataBinding>(inflater as LayoutInflater, R.layout.layout_head, this, false)

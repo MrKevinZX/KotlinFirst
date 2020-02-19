@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+    <LinearLayout
+        android:id="@+id/root_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--抗击疫情-->
+            <include
+                android:id="@+id/pane"
+                layout="@layout/layout_pane"
+                android:layout_width="120dp"
+                android:layout_height="30dp"/>
+
+            <!--扫一扫，消息-->
+            <include
+                android:id="@+id/view_scan"
+                app:layout_anchor="@+id/pane"
+                android:layout_gravity="right"
+                app:layout_anchorGravity="right"
+                layout="@layout/layout_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <!--recyclerview-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/goods_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                app:layout_anchor="@+id/search"
+                app:layout_anchorGravity="bottom|center_horizontal"
+               />
+            <!--搜索框-->
+            <include
+                android:id="@+id/search"
+                app:layout_anchor="@id/pane"
+                app:layout_anchorGravity="bottom|center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_height="wrap_content"
+                layout="@layout/layout_search"
+                />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
+
+</layout>

@@ -29,25 +29,32 @@
                 layout="@layout/layout_scan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <!--recyclerview-->
-            <androidx.recyclerview.widget.RecyclerView
+            <RelativeLayout
                 android:id="@+id/goods_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 app:layout_anchor="@+id/search"
-                app:layout_anchorGravity="bottom|center_horizontal"
-               />
+                app:layout_anchorGravity="bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </RelativeLayout>
+            <!--recyclerview-->
+
             <!--搜索框-->
             <include
                 android:id="@+id/search"
                 app:layout_anchor="@id/pane"
-                app:layout_anchorGravity="bottom|center_horizontal"
-                android:layout_width="wrap_content"
+                app:layout_anchorGravity="bottom"
+                android:layout_width="match_parent"
                 android:layout_gravity="bottom"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 layout="@layout/layout_search"
                 />
+
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </LinearLayout>
 

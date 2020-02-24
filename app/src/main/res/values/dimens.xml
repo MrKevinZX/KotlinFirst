@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="banner_list_height">98dp</dimen>
+    <dimen name="top_shop_height">80dp</dimen>
+    <dimen name="tab_switcher_height">44dp</dimen>
+    <dimen name="reault_search_height">48dp</dimen>
+</resources>

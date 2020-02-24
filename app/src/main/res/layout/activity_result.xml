@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--列表-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vp_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!--专场-->
+        <TextView
+            android:id="@+id/result_banner_list"
+            android:layout_width="match_parent"
+            android:background="#FFFFFF"
+            android:text="专场"
+            android:layout_height="@dimen/banner_list_height"
+            />
+        <!--店铺-->
+        <TextView
+            android:id="@+id/result_top_shop"
+            android:layout_width="match_parent"
+            android:text="店铺"
+            android:layout_height="@dimen/top_shop_height" />
+
+        <!--商品，返利，笔记tab切换-->
+        <TextView
+            android:id="@+id/result_tab_switcher"
+            android:layout_width="match_parent"
+            android:text="-商品，返利，笔记"
+            android:layout_height="@dimen/tab_switcher_height" />
+
+        <!--搜索框-->
+        <TextView
+            android:id="@+id/result_search_header"
+            android:layout_width="match_parent"
+            android:text="搜索框"
+            android:background="#FFFFFF"
+            android:layout_height="@dimen/reault_search_height"/>
+        <!--综合，价格，筛选-->
+        <TextView
+            android:id="@+id/filter_container"
+            android:text="综合，价格，筛选"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

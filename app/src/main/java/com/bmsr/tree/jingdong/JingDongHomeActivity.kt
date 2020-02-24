@@ -11,7 +11,10 @@ import com.bmsr.tree.databinding.ActivityJingdongBinding
 class JingDongHomeActivity :AppCompatActivity() {
 
     lateinit var recyclerView: RecyclerView
-    var mDatas = listOf("苹果","凤梨", "鸡蛋", "白菜", "老婆","电脑", "手机", "电视","笔", "房子", "毛毛虫", "跳舞课程", "全集课程")
+    var mDatas = listOf("苹果","凤梨", "鸡蛋",
+        "白菜", "老婆","电脑", "手机", "电视","笔", "房子",
+        "毛毛虫", "跳舞课程", "全集课程",
+        "白菜", "老婆","电脑", "手机", "电视","笔", "房子")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

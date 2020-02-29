@@ -5,57 +5,45 @@
     <data>
 
     </data>
-    <LinearLayout
-        android:id="@+id/root_container"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+        <!--抗击疫情-->
+        <TextView
+            android:id="@+id/pane"
+            android:text="抗击疫情,人人有责"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="left"
+            android:layout_width="120dp"
+            android:layout_height="30dp"/>
+
+        <!--扫一扫，消息-->
+        <TextView
+            android:id="@+id/view_scan"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:text="@string/scan_msg"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_marginTop="100dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content" />
 
-            <!--抗击疫情-->
-            <include
-                android:id="@+id/pane"
-                layout="@layout/layout_pane"
-                android:layout_width="120dp"
-                android:layout_height="30dp"/>
+        <!--搜索框-->
+        <TextView
+            android:id="@+id/search"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="搜索框"
+            android:background="#22ff00"
+            android:gravity="center" />
 
-            <!--扫一扫，消息-->
-            <include
-                android:id="@+id/view_scan"
-                app:layout_anchor="@+id/pane"
-                android:layout_gravity="right"
-                app:layout_anchorGravity="right"
-                layout="@layout/layout_scan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <RelativeLayout
-                android:id="@+id/goods_container"
-                android:layout_gravity="bottom"
-                app:layout_anchor="@+id/search"
-                app:layout_anchorGravity="bottom"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-            </RelativeLayout>
-            <!--recyclerview-->
 
-            <!--搜索框-->
-            <include
-                android:id="@+id/search"
-                app:layout_anchor="@id/pane"
-                app:layout_anchorGravity="bottom"
-                android:layout_width="match_parent"
-                android:layout_gravity="bottom"
-                android:layout_height="45dp"
-                layout="@layout/layout_search"
-                />
-
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
-    </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>

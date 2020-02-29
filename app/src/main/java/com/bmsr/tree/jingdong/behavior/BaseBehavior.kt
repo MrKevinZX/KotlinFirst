@@ -2,84 +2,44 @@ package com.bmsr.tree.jingdong.behavior
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.view.ViewCompat
 
 abstract class BaseBehavior : CoordinatorLayout.Behavior<View> {
+    var isPull = false
     constructor()
 
-    constructor(context: Context, attributeSet: AttributeSet): super(context, attributeSet) {
+    init {
 
     }
 
-    override fun onLayoutChild(
-        parent: CoordinatorLayout,
-        child: View,
-        layoutDirection: Int
-    ): Boolean {
-        super.onLayoutChild(parent, child, layoutDirection)
-        parent.onLayoutChild(child,layoutDirection)
-        child.y = getItemYPosition()
-        return true
+    constructor(context: Context, attributeSet: AttributeSet): super(context, attributeSet)
+    val TAG = "wdd"
+
+    var defaultPosition = 0
+    // 滑动最终位置
+    var endPosition = 0
+    // 初始位置
+
+
+
+    fun updatePosition(defaultPositon : Int, endPosition:Int) {
+        this.defaultPosition = defaultPositon
+        this.endPosition = endPosition
+        Log.i(TAG, "updatePosition endposition= " + endPosition)
     }
 
-
-    override fun onNestedPreFling(
+    override fun onStartNestedScroll(
         coordinatorLayout: CoordinatorLayout,
         child: View,
+        directTargetChild: View,
         target: View,
-        velocityX: Float,
-        velocityY: Float
-    ): Boolean {
-        return super.onNestedPreFling(coordinatorLayout, child, target, velocityX, velocityY)
-    }
-
-    override fun onNestedFling(
-        coordinatorLayout: CoordinatorLayout,
-        child: View,
-        target: View,
-        velocityX: Float,
-        velocityY: Float,
-        consumed: Boolean
-    ): Boolean {
-        return super.onNestedFling(coordinatorLayout, child, target, velocityX, velocityY, consumed)
-    }
-
-
-    override fun onNestedPreScroll(
-        coordinatorLayout: CoordinatorLayout,
-        child: View,
-        target: View,
-        dx: Int,
-        dy: Int,
-        consumed: IntArray,
+        axes: Int,
         type: Int
-    ) {
-        super.onNestedPreScroll(coordinatorLayout, child, target, dx, dy, consumed, type)
-    }
-    override fun onNestedScroll(
-        coordinatorLayout: CoordinatorLayout,
-        child: View,
-        target: View,
-        dxConsumed: Int,
-        dyConsumed: Int,
-        dxUnconsumed: Int,
-        dyUnconsumed: Int,
-        type: Int
-    ) {
-        super.onNestedScroll(
-            coordinatorLayout,
-            child,
-            target,
-            dxConsumed,
-            dyConsumed,
-            dxUnconsumed,
-            dyUnconsumed,
-            type
-        )
-
-
+    ): Boolean { //判断监听的方向
+        return axes and ViewCompat.SCROLL_AXIS_VERTICAL != 0
     }
 
-    abstract fun getItemYPosition(): Float
 }
